@@ -66,22 +66,19 @@ public class Controller {
             }
 
 
-            }
+        }
 
-            char c = sc.nextLine().toUpperCase().charAt(0);
-            System.out.println("가입된 회원이 아닙니다. 가입하시겠습니까? : Y/N ");
-            switch (c) {
-                case 'Y':
-                    SigninMember();
-                    break;
-                case 'N':
-                    System.out.println("비회원 결제를 진행합니다. ");
-                    System.out.println("고객님의 최종 결제 금액은 : " + pay.normalPrice() + "원 입니다.");
-                    Pay.price = 0;
-                    break;
-
-
-
+        char c = sc.nextLine().toUpperCase().charAt(0);
+        System.out.println("가입된 회원이 아닙니다. 가입하시겠습니까? : Y/N ");
+        switch (c) {
+            case 'Y':
+                SigninMember();
+                break;
+            case 'N':
+                System.out.println("비회원 결제를 진행합니다. ");
+                System.out.println("고객님의 최종 결제 금액은 : " + pay.normalPrice() + "원 입니다.");
+                Pay.price = 0;
+                break;
 
 
         }
@@ -97,7 +94,7 @@ public class Controller {
         System.out.println("전화번호를 입력해주세요 : ");
         String phone = sc.nextLine();
 
-        member[index] =  member[3] = new MemberDTO(name,phone);
+        member[index]  = new MemberDTO(name, phone);
         System.out.println(member[index].toString());
         index++;
         System.out.println("회원 가입이 완료되었습니다.");

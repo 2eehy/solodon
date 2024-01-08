@@ -22,9 +22,18 @@ public class SetView {
                    case 1:
                        Pay.price += 2000;
                        System.out.println("현재 가격은 " + Pay.price + "원 입니다.");
-                       System.out.print("다른 메뉴를 추가하시겠습니까? : (Y/N) ");
+                       System.out.print("다른 메뉴를 추가하시겠습니까? : (1/9) ");
                        c = sc.nextLine().toUpperCase().charAt(0);
-                       break;
+                       if(c == 9){
+
+                           break;
+
+                       }else if (c == 1) {
+
+
+                       }
+
+                       return;
                    case 2:
                        Pay.price += 3000;
                        System.out.println("현재 가격은 " + Pay.price + "원 입니다.");
@@ -49,8 +58,7 @@ public class SetView {
                        System.out.println("최종가격은 " + Pay.price + "원 입니다.");
                        break;
                    default:
-                       System.out.println("알맞은 메뉴를 선택해주세요 : ");
-                       break;
+
 
                }
            }while (c != 9);
