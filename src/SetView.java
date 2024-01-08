@@ -24,18 +24,11 @@ public class SetView {
                        System.out.println("현재 가격은 " + Pay.price + "원 입니다.");
                        System.out.print("다른 메뉴를 추가하시겠습니까? : (Y/N) ");
                        c = sc.nextLine().toUpperCase().charAt(0);
-
-
-
-
                        break;
-
-
                    case 2:
                        Pay.price += 3000;
                        System.out.println("현재 가격은 " + Pay.price + "원 입니다.");
                        break;
-
                    case 3:
                        Pay.price += 3000;
                        System.out.println("현재 가격은 " + Pay.price + "원 입니다.");

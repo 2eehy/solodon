@@ -1,4 +1,4 @@
-import java.util.Locale;
+
 import java.util.Scanner;
 
 
@@ -14,13 +14,6 @@ public class Controller {
         member[0] = new MemberDTO("이후영", "01032283158");
         member[1] = new MemberDTO("강정희", "01011112222");
         member[2] = new MemberDTO("이수민", "01033334444");
-        member[3] = new MemberDTO();
-        member[4] = new MemberDTO();
-        member[5] = new MemberDTO();
-        member[6] = new MemberDTO();
-        member[7] = new MemberDTO();
-        member[8] = new MemberDTO();
-        member[9] = new MemberDTO();
 
 
     }
@@ -67,27 +60,28 @@ public class Controller {
                 System.out.println("회원 랜덤쿠폰 적용후 최종결제 진행하겠습니다.");
                 System.out.println(marr.getName() + " 님 의 최종결제금액은 " + pay.memberPrice() + "원 입니다.");
                 Pay.price = 0;
-                break;
-
-
-            } else {
-                char c = sc.nextLine().toUpperCase().charAt(0);
-                System.out.println("가입된 회원이 아닙니다. 가입하시겠습니까? : Y/N ");
-                switch (c) {
-                    case 'Y':
-                        SigninMember();
-                        break;
-                    case 'N':
-                        System.out.println("비회원 결제를 진행합니다. ");
-                        System.out.println("고객님의 최종 결제 금액은 : " + pay.normalPrice() + "원 입니다.");
-                        Pay.price = 0;
-                        break;
-
-
-                }
+                return;
 
 
             }
+
+
+            }
+
+            char c = sc.nextLine().toUpperCase().charAt(0);
+            System.out.println("가입된 회원이 아닙니다. 가입하시겠습니까? : Y/N ");
+            switch (c) {
+                case 'Y':
+                    SigninMember();
+                    break;
+                case 'N':
+                    System.out.println("비회원 결제를 진행합니다. ");
+                    System.out.println("고객님의 최종 결제 금액은 : " + pay.normalPrice() + "원 입니다.");
+                    Pay.price = 0;
+                    break;
+
+
+
 
 
         }
@@ -103,7 +97,7 @@ public class Controller {
         System.out.println("전화번호를 입력해주세요 : ");
         String phone = sc.nextLine();
 
-        this.member[index] =  member[3] = new MemberDTO();
+        member[index] =  member[3] = new MemberDTO(name,phone);
         System.out.println(member[index].toString());
         index++;
         System.out.println("회원 가입이 완료되었습니다.");
@@ -131,6 +125,12 @@ public class Controller {
                     case 'Y':
                         SigninMember();
                         MemberCheck();
+                        break;
+                    case 'N':
+                        System.out.println("비회원 결제를 진행합니다. ");
+                        System.out.println("고객님의 최종 결제 금액은 : " + pay.normalPrice() + "원 입니다.");
+                        Pay.price = 0;
+                        break;
                 }
 
 
